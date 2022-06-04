@@ -1,0 +1,6 @@
+project: code-terror/libpnet
+target: ipv4
+
+cmds:
+  - cmd: ./ipv4
+    libfuzzer: true

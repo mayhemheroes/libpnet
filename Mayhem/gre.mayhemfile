@@ -1,0 +1,6 @@
+project: code-terror/libpnet
+target: gre
+
+cmds:
+  - cmd: ./gre
+    libfuzzer: true

@@ -1,0 +1,6 @@
+project: code-terror/libpnet
+target: udp
+
+cmds:
+  - cmd: ./udp
+    libfuzzer: true
