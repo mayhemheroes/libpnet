@@ -1,0 +1,6 @@
+project: code-terror/libpnet
+target: vlan
+
+cmds:
+  - cmd: ./vlan
+    libfuzzer: true

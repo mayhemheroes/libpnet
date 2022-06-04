@@ -1,0 +1,6 @@
+project: code-terror/libpnet
+target: tcp
+
+cmds:
+  - cmd: ./tcp
+    libfuzzer: true
