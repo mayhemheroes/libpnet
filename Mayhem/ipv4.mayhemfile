@@ -1,4 +1,4 @@
-project: code-terror/libpnet
+project: libpnet
 target: ipv4
 
 cmds:

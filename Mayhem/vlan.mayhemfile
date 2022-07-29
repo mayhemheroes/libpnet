@@ -1,4 +1,4 @@
-project: code-terror/libpnet
+project: libpnet
 target: vlan
 
 cmds:
