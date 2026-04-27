@@ -57,48 +57,38 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Start analysis for tcp
-        uses: ForAllSecure/mcode-action@v1
+        uses: forallsecure/mcode-action@long-runs
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.tcp_mayhemfile}} --duration 300
-          sarif-output: sarif
 
       - name: Start analysis for udp
-        uses: ForAllSecure/mcode-action@v1
+        uses: forallsecure/mcode-action@long-runs
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.udp_mayhemfile}} --duration 300
-          sarif-output: sarif
             
       - name: Start analysis for vlan
-        uses: ForAllSecure/mcode-action@v1
+        uses: forallsecure/mcode-action@long-runs
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.vlan_mayhemfile}} --duration 300
-          sarif-output: sarif
       
       - name: Start analysis for ipv4
-        uses: ForAllSecure/mcode-action@v1
+        uses: forallsecure/mcode-action@long-runs
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.ipv4_mayhemfile}} --duration 300
-          sarif-output: sarif
       
 #      - name: Start analysis for gre
-#        uses: ForAllSecure/mcode-action@v1
+#        uses: forallsecure/mcode-action@long-runs
 #        with:
 #          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
 #          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.gre_mayhemfile}} --duration 300
-#          sarif-output: sarif
+#
 
       - name: Start analysis for ether
-        uses: ForAllSecure/mcode-action@v1
+        uses: forallsecure/mcode-action@long-runs
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.ether_mayhemfile}} --duration 300
-          sarif-output: sarif
-
-      - name: Upload SARIF file(s)
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: sarif
